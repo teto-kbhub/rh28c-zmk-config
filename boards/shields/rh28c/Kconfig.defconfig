@@ -1,0 +1,6 @@
+if SHIELD_RH28C
+
+config ZMK_KEYBOARD_NAME
+    default "RH28C"
+
+endif

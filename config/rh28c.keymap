@@ -1,0 +1,37 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/rgb.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            // 位置番号 = SW番号 - 1
+            // row4 (top row)  SW1-SW6
+            // row3            SW7-SW12
+            // row2            SW13-SW18
+            // row1            SW19-SW24
+            // row0 (bottom)   SW25,SW26,SW27,SW28
+            bindings = <
+                &kp TAB       &kp N1   &kp N2   &kp N3   &kp N4   &kp N5
+                &kp Q         &kp W    &kp E    &kp R    &kp T    &kp BSPC
+                &kp LC(Z)     &kp A    &kp S    &kp D    &kp F    &kp G
+                &kp RET       &kp Z    &kp X    &kp C    &kp V    &kp LSHFT
+                &mt LALT SPACE  &mo 1  &mt LGUI B  &kp LCTRL
+            >;
+            sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp UP DOWN>;
+        };
+
+        fn_layer {
+            bindings = <
+                &trans                &kp N6          &kp N7          &kp N8   &kp N9   &kp N0
+                &rgb_ug RGB_TOG       &rgb_ug RGB_BRI &rgb_ug RGB_BRD &trans   &trans   &kp DEL
+                &kp LC(LS(Z))         &trans          &trans          &trans   &trans   &trans
+                &kp ESC               &trans          &trans          &trans   &trans   &kp LSHFT
+                &trans  &trans  &kp LGUI  &kp LCTRL
+            >;
+            sensor-bindings = <&inc_dec_kp RBKT LBKT &inc_dec_kp PG_UP PG_DN>;
+        };
+    };
+};

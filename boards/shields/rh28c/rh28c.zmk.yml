@@ -1,0 +1,7 @@
+file_format: "1"
+id: rh28c
+name: RH28C
+type: shield
+url: https://github.com/teto-kbhub/rh28c-zmk-config
+requires:
+  - seeeduino_xiao_ble
